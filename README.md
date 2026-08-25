@@ -14,7 +14,7 @@ Basado en el diagrama de hardware, las conexiones a la placa ESP32 se han distri
     *   🔴 LED Rojo: Conectado al pin **GPIO 4**.
     *   🟢 LED Verde: Conectado al pin **GPIO 2**.
 
-![Esquema de Conexión de LEDs](imagenes/g.png)
+![Esquema de Conexión de LEDs](imagenes/123.png)
 
 ## Explicación Código
 El programa importa la clase Pin para interactuar físicamente con los pines de la ESP32. Se declaran los LEDs como salidas (Pin.OUT) y los botones como entradas (Pin.IN). Se habilita el modo Pin.PULL_UP, lo que obliga al microcontrolador a leer un "1 lógico" cuando el botón está suelto, y un "0 lógico" cuando el usuario lo presiona y cierra el circuito hacia tierra (GND). En el bucle while True, el código evalúa estas condiciones: si lee un 0, envía voltaje al LED para encenderlo (value(1)); si no, lo apaga (value(0)). El comando time.sleep(0.05) previene lecturas falsas causadas por el rebote mecánico del botón.
